@@ -1,7 +1,9 @@
 import React from "react";
 import "./App.css";
-import DataFetching from "./components/DataFetching";
+import ComponentC from "./components/ComponentC";
 
+export const UserContext = React.createContext();
+export const ChannelContext = React.createContext();
 function App() {
   return (
     <div className="App">
@@ -14,7 +16,13 @@ function App() {
       {/* <HookMouse /> */}
       {/* <MouseContainer /> */}
       {/* <IntervalHookCounter /> */}
-      <DataFetching />
+      {/* <DataFetching /> */}
+
+      <UserContext.Provider value={"MadupuR"}>
+        <ChannelContext.Provider value={"Codevolution"}>
+          <ComponentC />
+        </ChannelContext.Provider>
+      </UserContext.Provider>
     </div>
   );
 }
